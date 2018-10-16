@@ -1,0 +1,42 @@
+{
+  "name": "url.parse",
+  "version": "1.0.0",
+  "description": "A user-land copy of the legacy url API from Node.js",
+  "main": "url.js",
+  "engines": {
+    "node": ">= 6"
+  },
+  "scripts": {
+    "test": "tap -j 4 test/parallel/*.js test/ours/*.js",
+    "ci": "TAP=1 tap test/parallel/*.js test/ours/*.js | tee test.tap",
+    "cover": "nyc npm test",
+    "report": "nyc report --reporter=lcov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasnell/url.parse.git"
+  },
+  "keywords": [
+    "Node.js",
+    "url.parse",
+    "url.format"
+  ],
+  "author": "James M Snell <jasnell@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasnell/url.parse/issues"
+  },
+  "homepage": "https://github.com/jasnell/url.parse#readme",
+  "dependencies": {
+    "punycode": "^2.1.1"
+  },
+  "devDependencies": {
+    "tap": "^12.0.1",
+    "nyc": "^13.1.0"
+  },
+  "nyc": {
+    "include": [
+      "**.js"
+    ]
+  }
+}
